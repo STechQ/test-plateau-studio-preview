@@ -1,5 +1,4 @@
 import { IComponent } from "../ComponentInterfaces/IComponent";
-import { IVersion } from "../ComponentInterfaces/IVersion";
 import { IDomElement } from "../RenderingInterfaces/IDomElement";
 import { IRenderer } from "../RenderingInterfaces/IRenderer";
 import { IRendererConfig } from "../RenderingInterfaces/IRendererConfig";
@@ -38,7 +37,6 @@ export interface IWebSDKSettings {
     pipelineqjson?: string;
     alertqjson?: string;
     loadingqjson?: string;
-    globalLocalizationqjson?: string;
     singleTab?: any;
     rootqjson?: string;
     rootLangCode?: string;
@@ -50,7 +48,6 @@ export interface IWebSDKSettings {
     title?: string;
     favicon?: string;
     minEngineLogLevel?: string;
-    versions?: IVersion;
 }
 export interface IWebSDKCtor {
     new (settings: IWebSDKSettings, services?: IContainerServices): IWebSDK;
