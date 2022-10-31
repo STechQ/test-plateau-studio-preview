@@ -19,6 +19,7 @@ import { IProcessManager } from "./IProcessManager";
 import { IFormattingDefinition } from "./ISettingsYaml";
 import { IShellGlobalMethods } from "./IShellGlobalMethods";
 import { IStorageAccess } from "./IStore";
+import { IUrlOptions } from "./IUrl";
 export interface IShellConfiguration {
     network: INetwork;
     lridHelper?: (label: string, params: Object) => string;
@@ -77,8 +78,9 @@ export interface IShellConfiguration {
     setVisibility(compCollection: IComponentCollection, compVisibility: boolean): void;
     getComponentValue(compCollection: IComponentCollection): any;
     setComponentValue(compCollection: IComponentCollection, value: string): void;
-    redirect?({ url }: {
+    redirect?({ url, options }: {
         url: string;
+        options?: IUrlOptions;
     }): void;
     onComponentDestroy?: ({ parentComponent, childVDomElement, childKey, }: {
         parentComponent: IComponent;
