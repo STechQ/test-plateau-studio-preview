@@ -10,7 +10,7 @@
     "quick:serve": "symphony-cli quick-serve"
   },
   "devDependencies": {
-    "@stechquick/qui": "^1.0.3",
+    "@stechquick/qui": "^1.0.363",
     "@stechquick/symphony-cli": "^0.2.290"
   },
   "author": "",

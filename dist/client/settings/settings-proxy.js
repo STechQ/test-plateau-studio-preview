@@ -2,24 +2,24 @@ const yamlObject = {
 	"settings": {
 		"csspath": {
 			"default": [
-				"/static/css/main.css"
+				"static/css/main.css"
 			],
 			"myTheme": [
-				"/static/css/myHappyTheme1.css",
-				"/static/css/myHappyTheme2.css"
+				"static/css/myHappyTheme1.css",
+				"static/css/myHappyTheme2.css"
 			],
 			"darkTheme": [
-				"/static/css/myDarkTheme.css"
+				"static/css/myDarkTheme.css"
 			],
 			"cozy": [
 				"YOUR COZY THEME CSS PATH"
 			]
 		},
-		"rootqjson": "/static/qjsons/samplesFirstPage",
+		"rootqjson": "static/qjsons/samplesFirstPage",
 		"rootLangCode": "tr-TR",
-		"alertqjson": "/settings/qjson/alert.qjson",
-		"pipelineqjson": "/settings/qjson/pipeline.qjson",
-		"loadingqjson": "/settings/qjson/loading.qjson",
+		"alertqjson": "settings/qjson/alert.qjson",
+		"pipelineqjson": "settings/qjson/pipeline.qjson",
+		"loadingqjson": "settings/qjson/loading.qjson",
 		"RegionalDefinition": [
 			{
 				"region": "tr",
