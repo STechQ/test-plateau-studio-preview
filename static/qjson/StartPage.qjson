@@ -1,0 +1,53 @@
+let pjson = {
+	"pJson": [
+		{
+			"T": "Messaging",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_258",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"PostRender": {
+					"H": "/*********  AUTO GENERATED LINE  *********/\r\nquick.Quick.go(\"/static/qjson/Demo/LoginPage.qjson\");\r\n/*********  AUTO GENERATED LINE  *********/",
+					"TO": 1,
+					"HL": "TS"
+				}
+			},
+			"C": {},
+			"_Editor": {
+				"eID": "EdtrComp_258"
+			},
+			"O": {}
+		}
+	],
+	"cJson": [
+		{
+			"T": "Messaging",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_258",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"PostRender": {
+					"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\n/*********  AUTO GENERATED LINE  *********/\r\nquick.Quick.go(\"/static/qjson/Demo/LoginPage.qjson\");\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRWR0ckNvbXBfMjU4X1Bvc3RSZW5kZXJfRS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkVkdHJDb21wXzI1OF9Qb3N0UmVuZGVyX0UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBLDJDQUEyQztBQUMzQyxLQUFLLENBQUMsS0FBSyxDQUFDLEVBQUUsQ0FBQyw0Q0FBNEMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiXG4vKioqKioqKioqICBBVVRPIEdFTkVSQVRFRCBMSU5FICAqKioqKioqKiovXHJcbnF1aWNrLlF1aWNrLmdvKFwiPDxxanNvbjpqaGN6cG9ieC1vY2NtLWZ5NG8tbjlncC1xMnJnaTIyYj4+XCIpO1xyXG4vKioqKioqKioqICBBVVRPIEdFTkVSQVRFRCBMSU5FICAqKioqKioqKiovXG4gZXhwb3J0e307XG4iXX0=",
+					"TO": 1,
+					"HL": "JS"
+				}
+			},
+			"C": {},
+			"_Editor": {
+				"eID": "EdtrComp_258"
+			},
+			"O": {
+				"cType": "child"
+			}
+		}
+	],
+	"lrids": {},
+	"clrids": {}
+};
+export default pjson
