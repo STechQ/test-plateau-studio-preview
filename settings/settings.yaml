@@ -95,4 +95,4 @@ regionalDefinition:
         overwrite: true
         value: dd/MM/yyyy
 qjsonDirectPath: true
-rootqjson: /static/qjson/LoginPage
+rootqjson: static/qjson/LoginPage
