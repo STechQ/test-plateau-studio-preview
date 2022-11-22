@@ -5,7 +5,6 @@ import { IRenderer } from "../RenderingInterfaces/IRenderer";
 import { IRendererConfig } from "../RenderingInterfaces/IRendererConfig";
 import { IContainerServices } from "./IContainerServices";
 import { IExternalQJsonRetriever } from "./IExternalQJsonRetriever";
-import { IPlateauIAM } from "./IPlateauIAM";
 import { IRegionalDefinition } from "./ISettingsYaml";
 import { IUXManager } from "./IUXManager";
 import { IWebSDKSetingsBus } from "./IWebSDKSettingsBus";
@@ -39,6 +38,11 @@ export interface IWebSDKSettings {
     alertqjson?: string;
     loadingqjson?: string;
     globalLocalizationqjson?: string;
+    pipelineqjsonContent?: any;
+    alertqjsonContent?: any;
+    loadingqjsonContent?: any;
+    globalLocalizationqjsonContent?: any;
+    rootqjsonContent?: any;
     singleTab?: any;
     rootqjson?: string;
     rootLangCode?: string;
@@ -89,7 +93,6 @@ export interface IWebSDK {
     reset(): void;
     trigger(eventName: string, parameters: any, pageID?: string): any;
     addPlugin(plugin: any): void;
-    getPlateauIAM(): IPlateauIAM;
     UpdateSettings(allSettings: IWebSDKSetingsBus): void;
     migrateLegacySettings(settings: IWebSDKSettings): void;
     getUXManager(): IUXManager;
