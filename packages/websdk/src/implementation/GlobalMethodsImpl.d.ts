@@ -62,6 +62,10 @@ export declare class GlobalMethodsImpl implements IGlobalMethods {
         items: Array<object>;
         headers: Array<object>;
     }): void;
+    downloadHandler(responseFile: {
+        data: string;
+        name: string;
+    }): any;
     setComponentClass(compCollection: IComponentCollection, classes: Array<string>): void;
     setComponentsProperty(componentCollection: IComponentCollection, propertyName: string, propertyValue: any): void;
     clearPageClose(): void;

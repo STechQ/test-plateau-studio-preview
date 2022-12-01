@@ -15,7 +15,7 @@ const yamlObject = {
 				"YOUR COZY THEME CSS PATH"
 			]
 		},
-		"rootqjson": "static/qjsons/LoginPage",
+		"rootqjson": "static/qjsons/samplesFirstPage",
 		"rootLangCode": "tr-TR",
 		"alertqjson": "settings/qjson/alert.qjson",
 		"pipelineqjson": "settings/qjson/pipeline.qjson",

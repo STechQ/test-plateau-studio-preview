@@ -107,6 +107,10 @@ export declare class ShellConfiguration implements IShellConfiguration {
         padding: string | "pkcs15";
     }) => string;
     getMinEngineLogType?: () => LogType | undefined;
+    downloadHandler?: (responseFile: {
+        data: string;
+        name: string;
+    }) => boolean;
     constructor();
 }
 //# sourceMappingURL=ShellConfiguration.d.ts.map

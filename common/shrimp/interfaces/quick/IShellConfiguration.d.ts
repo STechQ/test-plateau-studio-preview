@@ -111,6 +111,10 @@ export interface IShellConfiguration {
         padding: string | "pkcs15";
     }) => string;
     getMinEngineLogType?: () => LogType | undefined;
+    downloadHandler?: (responseFile: {
+        data: string;
+        name: string;
+    }) => boolean;
 }
 export interface IHistoryBasedShellConfiguration {
     isEditor: boolean;

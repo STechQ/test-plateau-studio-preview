@@ -4717,7 +4717,6 @@ var PlateauUIOptions = {
     filePathsForSettings: {
         settingsFilePath: "settings/settings-proxy.js",
         componentListFilePath: "static/js/componentList.js",
-        styleFilePath: "static/css/main.css",
         containerServicesFilePath: "static/js/containerServices.js"
     }
 };

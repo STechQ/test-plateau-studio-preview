@@ -6,6 +6,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     containes: boolean;
 }, {
     setTheme(): "primaryTheme" | "secondaryTheme" | "successTheme" | "errorTheme" | "warningTheme" | "white--text";
+    isIconPathAvaliable(imagePath: any): boolean;
     isImagePathAvaliable(imagePath: any): boolean;
     setPrependIcon(imagePath: any): any;
     childrenSetActiveDefaultAsFalse(list: any): void;

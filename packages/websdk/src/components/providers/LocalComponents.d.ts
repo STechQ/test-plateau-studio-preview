@@ -10,6 +10,7 @@ declare const localComponents: {
     QPhoneInput: any;
     QLightBox: any;
     VInlineDatepicker: any;
+    QReCaptcha: any;
     DataGrid: any;
     CustomAvatarComp: any;
     QTableCell: any;

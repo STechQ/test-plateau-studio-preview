@@ -66,5 +66,9 @@ export interface IGlobalMethods extends IContextItem {
     setEnvironment?: (env: unknown) => void;
     setYamlLogType?: (logType: string) => void;
     getMinEngineLogType?: () => LogType | undefined;
+    downloadHandler?: (responseFile: {
+        data: string;
+        name: string;
+    }) => boolean;
 }
 //# sourceMappingURL=IGlobalMethods.d.ts.map

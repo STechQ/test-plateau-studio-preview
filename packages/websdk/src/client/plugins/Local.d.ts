@@ -391,6 +391,20 @@ declare const libraryComponents: {
         height: string | number;
         tabindex: string | number;
     }>;
+    QReCaptcha: import("vue/types/vue").ExtendedVue<import("vue").default, {
+        captchaKeys: String;
+        language: string;
+    }, {
+        onLoadCallBack(): void;
+        successCallBack(token: string): void;
+        expiredCallback(): void;
+        errorCallback(): void;
+    }, unknown, {
+        _renderingProps: any;
+        siteKey: string;
+        size: string;
+        tabindex: number;
+    }>;
     VInlineTimePicker: import("vue/types/vue").ExtendedVue<import("vue").default, {
         value: any;
         menu2: boolean;
@@ -459,6 +473,7 @@ declare const libraryComponents: {
         containes: boolean;
     }, {
         setTheme(): "primaryTheme" | "secondaryTheme" | "successTheme" | "errorTheme" | "warningTheme" | "white--text";
+        isIconPathAvaliable(imagePath: any): boolean;
         isImagePathAvaliable(imagePath: any): boolean;
         setPrependIcon(imagePath: any): any;
         childrenSetActiveDefaultAsFalse(list: any): void;

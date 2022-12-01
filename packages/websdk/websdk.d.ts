@@ -7,12 +7,11 @@ declare type PlateauUIOptions = {
     filePathsForSettings?: {
         settingsFilePath?: string;
         componentListFilePath?: string;
-        styleFilePath?: string;
         containerServicesFilePath?: string;
     };
     fileContentsForSettings?: {
         settingsFileContent?: any;
-        componentListFileContent?: string;
+        componentListFileContent?: any;
         containerServicesFileContent?: IContainerServices;
     };
 };

@@ -4,7 +4,7 @@ import { AlertType, ErrorSource, IActionButton } from "../ComponentInterfaces/IA
 import { IComponent } from "../ComponentInterfaces/IComponent";
 import { LogType } from "../ComponentInterfaces/ILogger";
 import { IHostResponseData } from "../IHostResponseData";
-import { IDownloadRequest, IRequest } from "../NetworkInterfaces/IRequest";
+import { IRequest } from "../NetworkInterfaces/IRequest";
 import { ICookieValue } from "../quick/ICookieAccess";
 import { IEditorInstance } from "../quick/IEditorInstance";
 import { INetworkResponse } from "../quick/INetworkResponse";
@@ -13,7 +13,6 @@ import { IShell } from "../quick/IShell";
 import { IUrlOptions } from "../quick/IUrl";
 export interface IGlobals_Request {
     async(requestObject: IRequest): Promise<INetworkResponse<Record<string, any>>> | undefined;
-    download(requestObject: IDownloadRequest): void;
 }
 export interface IGlobals_process {
     getMetadata: () => any;
