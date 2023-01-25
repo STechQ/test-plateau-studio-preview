@@ -16,7 +16,7 @@ import { ICookieAccess } from "./ICookieAccess";
 import { IFormatConfiguration } from "./IFormatConfiguration";
 import { IPlatform } from "./IPlatform";
 import { IProcessManager } from "./IProcessManager";
-import { IFormattingDefinition } from "./IFormattingDefinition";
+import { IFormattingDefinition } from "./ISettingsYaml";
 import { IShellGlobalMethods } from "./IShellGlobalMethods";
 import { IStorageAccess } from "./IStore";
 import { IUrlOptions } from "./IUrl";
@@ -24,10 +24,6 @@ export interface IShellConfiguration {
     network: INetwork;
     lridHelper?: (label: string, params: Object) => string;
     go?: Function;
-    go2?(qjsonPath: string, options?: {
-        newTab?: boolean;
-        store?: boolean;
-    }): void;
     triggerPreviousPage?: Function;
     nemoComponents?: object;
     storeAccess?: IStorageAccess;

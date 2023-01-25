@@ -10,7 +10,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     idTest: string | null;
     isDateChangedBefore: boolean;
     monthFormat: string;
-    isClickClear: boolean;
 }, {
     changeMenuValue(): void;
     onKeyUp(event: any): void;

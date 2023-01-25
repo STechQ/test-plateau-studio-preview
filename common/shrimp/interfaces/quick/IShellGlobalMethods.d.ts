@@ -2,10 +2,6 @@ import { AlertType, ErrorSource, IActionButton } from "../ComponentInterfaces/IA
 import { IComponentCollection } from "../ComponentInterfaces/IComponentCollection";
 import { IDictionary } from "../IDictionary";
 import { INetworkResponse } from "./INetworkResponse";
-export interface IAlertParameters {
-    ownerComponent?: IComponentCollection;
-    currentPageId: string;
-}
 export interface IShellGlobalMethods extends IDictionary<any> {
     alert?: (options: {
         title?: string;
@@ -18,7 +14,9 @@ export interface IShellGlobalMethods extends IDictionary<any> {
             errorSource?: keyof typeof ErrorSource;
             response?: INetworkResponse;
         };
-    }, parameters: IAlertParameters) => void;
+    }, parameters?: {
+        ownerComponent?: IComponentCollection;
+    }) => void;
     getDeepLinkParams: () => Record<string, string | undefined>;
     goNative?: ({ code, param }: {
         code: string;

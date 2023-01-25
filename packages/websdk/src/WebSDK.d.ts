@@ -2,7 +2,7 @@ import { IComponent } from "../../../common/shrimp/interfaces/ComponentInterface
 import { IQJSon } from "../../../common/shrimp/interfaces/ComponentInterfaces/IQJson";
 import { IContainerServices, IContainerServicesWrapper } from "../../../common/shrimp/interfaces/quick/IContainerServices";
 import { IExternalQJsonRetriever } from "../../../common/shrimp/interfaces/quick/IExternalQJsonRetriever";
-import { IRegionalDefinition } from "../../../common/shrimp/interfaces/quick/IFormattingDefinition";
+import { IRegionalDefinition } from "../../../common/shrimp/interfaces/quick/ISettingsYaml";
 import { CompGroupType, IWebSDK, IWebSDKSettings } from "../../../common/shrimp/interfaces/quick/IWebSDK";
 import { IWebSDKSetingsBus } from "../../../common/shrimp/interfaces/quick/IWebSDKSettingsBus";
 import { IDomElement } from "../../../common/shrimp/interfaces/RenderingInterfaces/IDomElement";
@@ -12,10 +12,9 @@ import Vue from "vue";
 import { StoreManagerHookCb } from "./implementation/StoreManager";
 import { UXManagerImpl } from "./implementation/UXManagerImpl";
 import { IPlateauIAM } from "../../../common/shrimp/interfaces/quick/IPlateauIAM";
-import "../../../common/shrimp/helpers/urlHelper";
-import { IDictionary } from "../../../common/shrimp/interfaces/IDictionary";
 export declare class WebSDK implements IWebSDK {
     static servicesWrapper: IContainerServicesWrapper;
+    static plugins: Array<any>;
     config: IRendererConfig;
     private qshell;
     private rendererManager;
@@ -29,15 +28,23 @@ export declare class WebSDK implements IWebSDK {
     private platformType;
     private platformManagerImp;
     private region;
-    private dataManager;
     private hostTriggererImp;
+    private pageManager;
     private languageExtensions;
     private websdkContext;
     private moduleManager;
-    constructor(settings: IWebSDKSettings, services?: IContainerServices, environmentInfo?: IDictionary<string>);
+    constructor(settings: IWebSDKSettings, services?: IContainerServices);
     UpdateSettings(allSettings: IWebSDKSetingsBus): void;
     static getPlateauIAM(): IPlateauIAM;
     SetExternalQJsonRetriever(externalQJsonRetriever: IExternalQJsonRetriever): void;
+    addPlugin(plugin: any): void;
+    migrateLegacySettings(settings: IWebSDKSettings): void;
+    open(id: string, url: string, args: Record<string, any>): string;
+    trigger(eventName: string, parameters: Record<string, any>, pageID?: string): any;
+    close(id: string): void;
+    show(id: string): void;
+    hide(): void;
+    reset(): void;
     subscribeStoreData(name: string, cb: StoreManagerHookCb): void;
     unSubscribeStoreData(name: string, cb: StoreManagerHookCb): void;
     private UpdateServices;
@@ -56,7 +63,7 @@ export declare class WebSDK implements IWebSDK {
     GetDomContainer(renderer: IRenderer): IDomElement;
     GetParentInstance(renderer: IRenderer): Vue;
     Clear(renderer: IRenderer): void;
-    setComponentOverrider(cb: (compName: string) => IComponent | null): void;
+    setComponentOverrider(cb: (compName: string) => IComponent | null): any;
     GetComponentList(compGroupNameArray: Array<CompGroupType>): Record<CompGroupType, any>;
     /**
      * Set domain prefix of qJson retriever in nemo
@@ -75,6 +82,13 @@ export declare class WebSDK implements IWebSDK {
     setPageTitle(title: string): void;
     setFavicon(favicon: string): void;
     getUXManager(): UXManagerImpl;
-    migrateLegacySettings(settings: any): IWebSDKSettings;
 }
+declare class WebSDKBuilder {
+    build(fetchLibrary: Function, settings: IWebSDKSettings, options: any, containerServicesInstance: IContainerServices): {
+        webSDKInstance: WebSDK;
+        loadProm: Promise<void>;
+    };
+}
+export declare let webSDKBuilder: WebSDKBuilder;
+export {};
 //# sourceMappingURL=WebSDK.d.ts.map

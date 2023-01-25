@@ -9,7 +9,7 @@ import { DisplayHookCb, IDory, PartialDisplayHookCb } from "../../../shrimp/inte
 import { IPageCompletedCb, IPageRenderStartedCb } from "../../../shrimp/interfaces/RenderingInterfaces/ILifeCycleCb";
 import { IDoryRenderer, IRenderer, ISettingsQJsonContext } from "../../../shrimp/interfaces/RenderingInterfaces/IRenderer";
 import { IRendererOperatorCollection } from "../../../shrimp/interfaces/RenderingInterfaces/Operators/IRendererOperatorCollection";
-import { DoryRendererChild } from "./RendererChild";
+import { RendererChild } from "./RendererChild";
 export declare class Renderer implements IRenderer {
     protected context: ContextManager;
     protected Dory: IDory;
@@ -31,7 +31,7 @@ export declare class Renderer implements IRenderer {
         pageName?: string;
         pjsonContent?: any;
     }): Promise<void>;
-    CreateChildRenderer(compUIDPrefix?: string): DoryRendererChild;
+    CreateChildRenderer(compUIDPrefix?: string): RendererChild;
     SetLRType(LRType?: string): void;
     SetGlobalLRDict(GlobalLRDict?: ILRID): void;
     SetSiteSettings(siteSettings: ISiteSettings): void;

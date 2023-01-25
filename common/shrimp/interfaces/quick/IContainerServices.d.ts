@@ -10,7 +10,6 @@ export declare type PostResponseType = 'arraybuffer' | 'blob' | 'document' | 'js
 export interface IRequestOptions {
     disableLoading?: boolean;
     withCredentials?: boolean;
-    timeout?: number;
 }
 export interface INetwork {
     get<RetType extends string | object | BinaryType>({ url, urlParams, headers, config, options }: {

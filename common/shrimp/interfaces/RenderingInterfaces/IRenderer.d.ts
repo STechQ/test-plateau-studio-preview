@@ -8,7 +8,6 @@ import { ISiteSettings } from "../quick/ISiteSettings";
 import { PartialDisplayHookCb, DisplayHookCb, IDory } from "./IDory";
 import { IPageCompletedCb, IPageRenderStartedCb } from "./ILifeCycleCb";
 import { IContextItem } from "../../context";
-import { IDoryJr } from "./IDoryJr";
 export interface IRendererChild {
     Render({ qjson, props, events, compParentInst, storeItems, pageId, pageName }: {
         qjson: IQJSon;
@@ -21,9 +20,6 @@ export interface IRendererChild {
         noHistory?: boolean;
     }): Promise<void>;
     SetCallbackDisplay(callBackFunc: PartialDisplayHookCb): void;
-}
-export interface IDoryRendererChild extends IRendererChild {
-    readonly DoryJrInst: IDoryJr;
 }
 export interface IRenderer {
     PageCompletedHook: Hook<IPageCompletedCb>;

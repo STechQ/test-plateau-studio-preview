@@ -3,7 +3,6 @@ import { ElementLocation } from "../../../../common/shrimp/interfaces/ComponentI
 import { AlertType, ErrorSource, IActionButton } from "../../../../common/shrimp/interfaces/ComponentInterfaces/IAlert";
 import { IComponent } from "../../../../common/shrimp/interfaces/ComponentInterfaces/IComponent";
 import { IComponentCollection } from "../../../../common/shrimp/interfaces/ComponentInterfaces/IComponentCollection";
-import { IAlertParameters } from "../../../../common/shrimp/interfaces/quick/IShellGlobalMethods";
 import { IWebSDKSettingsWrapper } from "../../../../common/shrimp/interfaces/quick/IWebSDK";
 import { IDomElement } from "../../../../common/shrimp/interfaces/RenderingInterfaces/IDomElement";
 import { IRenderer } from "../../../../common/shrimp/interfaces/RenderingInterfaces/IRenderer";
@@ -34,7 +33,9 @@ export declare class GlobalMethodsImpl implements IGlobalMethods {
             errorCode?: string;
             errorSource?: keyof typeof ErrorSource;
         };
-    }, parameters: IAlertParameters): void;
+    }, parameters?: {
+        ownerComponent?: IComponentCollection;
+    }): void;
     private createAlert;
     private static createLabelComp;
     performance(): number;

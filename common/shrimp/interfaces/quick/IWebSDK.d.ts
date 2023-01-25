@@ -5,11 +5,23 @@ import { IRenderer } from "../RenderingInterfaces/IRenderer";
 import { IRendererConfig } from "../RenderingInterfaces/IRendererConfig";
 import { IContainerServices } from "./IContainerServices";
 import { IExternalQJsonRetriever } from "./IExternalQJsonRetriever";
-import { IRegionalDefinition } from "./IFormattingDefinition";
+import { IRegionalDefinition } from "./ISettingsYaml";
 import { IUXManager } from "./IUXManager";
 import { IWebSDKSetingsBus } from "./IWebSDKSettingsBus";
 export interface IWebSDKSettingsWrapper {
     settings: IWebSDKSettings;
+}
+export interface IBackendInf {
+    containerName?: any;
+    isKibanaLogEnabled?: any;
+    iam?: {
+        active: boolean;
+        options?: any;
+    };
+    Backend?: any;
+    PredefinedBackendHeaders?: any;
+    HeaderExceptionList?: any;
+    Header?: any;
 }
 export interface IWebSDKSettings {
     qjsonURLPrefix?: string;
@@ -26,15 +38,13 @@ export interface IWebSDKSettings {
     alertqjson?: string;
     loadingqjson?: string;
     globalLocalizationqjson?: string;
-    rootqjson?: string;
-    containerServicesPath?: string;
-    componentListPath?: string;
     pipelineqjsonContent?: any;
     alertqjsonContent?: any;
     loadingqjsonContent?: any;
     globalLocalizationqjsonContent?: any;
     rootqjsonContent?: any;
     singleTab?: any;
+    rootqjson?: string;
     rootLangCode?: string;
     domainModuleList?: Record<string, string>;
     environment?: unknown;
@@ -45,18 +55,6 @@ export interface IWebSDKSettings {
     favicon?: string;
     minEngineLogLevel?: string;
     versions?: IVersion;
-}
-export interface IBackendInf {
-    containerName?: any;
-    isKibanaLogEnabled?: any;
-    iam?: {
-        active: boolean;
-        options?: any;
-    };
-    Backend?: any;
-    PredefinedBackendHeaders?: any;
-    HeaderExceptionList?: any;
-    Header?: any;
 }
 export interface IWebSDKCtor {
     new (settings: IWebSDKSettings, services?: IContainerServices): IWebSDK;
@@ -88,10 +86,17 @@ export interface IWebSDK {
     setRegionalDefinition(regionalSettings: Array<IRegionalDefinition> | undefined): void;
     setBackEndInfHeaders(backendInf: any): void;
     SetExternalQJsonRetriever(externalQJsonRetriever: IExternalQJsonRetriever): void;
+    open(id: string, url: string, args: Record<string, any>): string;
+    close(id: string): void;
+    show(id: string): void;
+    hide(): void;
+    reset(): void;
+    trigger(eventName: string, parameters: any, pageID?: string): any;
+    addPlugin(plugin: any): void;
     UpdateSettings(allSettings: IWebSDKSetingsBus): void;
+    migrateLegacySettings(settings: IWebSDKSettings): void;
     getUXManager(): IUXManager;
     setEnvironment(env: unknown): void;
     setYamlLogType(logType: string): void;
-    migrateLegacySettings(settings: any): IWebSDKSettings;
 }
 //# sourceMappingURL=IWebSDK.d.ts.map

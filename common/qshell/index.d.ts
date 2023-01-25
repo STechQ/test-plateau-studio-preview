@@ -2,7 +2,7 @@ import { IContextItem } from "../shrimp/context";
 import { IComponentInstanceTracker } from "../shrimp/interfaces/ComponentInterfaces/IComponentInstanceTracker";
 import { IExternalLocalizationFunc } from "../shrimp/interfaces/quick/IExternalLocalizationFunc";
 import { PlatformType } from "../shrimp/interfaces/quick/IPlatform";
-import { IRegionalDefinition } from "../shrimp/interfaces/quick/IFormattingDefinition";
+import { IRegionalDefinition } from "../shrimp/interfaces/quick/ISettingsYaml";
 import { IUXManager } from "../shrimp/interfaces/quick/IUXManager";
 import { IRenderer } from "../shrimp/interfaces/RenderingInterfaces/IRenderer";
 import { IRendererConfig } from "../shrimp/interfaces/RenderingInterfaces/IRendererConfig";

@@ -1,9 +1,7 @@
 declare const _default: {
     name: string;
     props: {};
-    data: () => {
-        mdiPath: string;
-    };
+    data: () => {};
     created(): void;
     methods: {};
 };

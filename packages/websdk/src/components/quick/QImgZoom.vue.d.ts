@@ -8,27 +8,11 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     bigImgTop: number;
     show: boolean;
     imgWidth: number;
-    isClick: boolean;
-    rotateDeg: number;
-    margin_left: number;
-    margin_top: number;
-    divHeight: number;
-    divWidth: number;
-    backSizeX: number;
-    backSizeY: number;
-    mouseX: number;
-    mouseY: number;
 }, {
     mouseMove(event: any): void;
     mouseLeave(): void;
-    imageClick(): void;
-    rotate(angle?: 0 | 90 | 180 | 270 | 360 | -90 | -180 | -270 | -360 | undefined): void;
-    zoomTypeOn(x: number, y: number): void;
-    zoomTypeNextTo(x: number, y: number): void;
-}, {
-    imageStyle: any;
-    divStyle: any;
-}, {
+    mouseEnter(): void;
+}, unknown, {
     src: string;
     zoomedAreaHeight: number;
     zoomedAreaWidth: number;
@@ -39,13 +23,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     marginLeft: number;
     height: number;
     width: number;
-    zoomType: string;
-    zoomRate: number;
-    imageFit: string;
-    disableZoom: boolean;
-    hideRotation: boolean;
-    zoomInUrl: string;
-    zoomOutUrl: string;
 }>;
 export default _default;
 //# sourceMappingURL=QImgZoom.vue.d.ts.map

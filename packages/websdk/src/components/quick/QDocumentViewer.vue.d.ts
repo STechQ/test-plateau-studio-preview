@@ -3,10 +3,8 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     show: boolean;
     loadedRatio: number;
     numPages: number;
-    page: number;
     turn: number;
     showToolbar: boolean;
-    pdfKey: number;
 }, {
     createPdf(): void;
     getType(): any;
@@ -22,6 +20,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     src: any;
     height: string;
     width: string;
+    page: number;
     scale: string;
     showToolBar: boolean;
     loadingContent: string;

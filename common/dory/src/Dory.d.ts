@@ -8,10 +8,9 @@ import { IEditorInstance } from "../../shrimp/interfaces/quick/IEditorInstance";
 import { INavigationDemand, INavigationDemandType } from "../../shrimp/interfaces/quick/INavigationDemand";
 import { PlatformType } from "../../shrimp/interfaces/quick/IPlatform";
 import { IQError } from "../../shrimp/interfaces/quick/IQError";
-import { IRegionalDefinition } from "../../shrimp/interfaces/quick/IFormattingDefinition";
+import { IRegionalDefinition } from "../../shrimp/interfaces/quick/ISettingsYaml";
 import { IShellConfiguration } from "../../shrimp/interfaces/quick/IShellConfiguration";
 import { ISiteSettings } from "../../shrimp/interfaces/quick/ISiteSettings";
-import { IStore } from "../../shrimp/interfaces/quick/IStore";
 import { IDomElement } from "../../shrimp/interfaces/RenderingInterfaces/IDomElement";
 import { DisplayHookCb, IDory, IGoHistoryOptions, PartialDisplayHookCb } from "../../shrimp/interfaces/RenderingInterfaces/IDory";
 import { IDoryJr } from "../../shrimp/interfaces/RenderingInterfaces/IDoryJr";
@@ -21,6 +20,8 @@ import { IRendererOperatorCollection } from "../../shrimp/interfaces/RenderingIn
 import { IGlobalsQS } from "../../shrimp/interfaces/Scripting/IGlobals";
 import { ScriptLang } from "../../shrimp/interfaces/Scripting/scriptLang";
 import { ShellConfiguration } from "./Config/ShellConfiguration";
+import { BagStoreContext } from "./Context/Store/BagStoreContext";
+import { GlobalStoreContext } from "./Context/Store/GlobalStoreContext";
 import { SharedStoreContext } from "./Context/Store/SharedStoreContext";
 import { HistoryItem } from "./Model/History/HistoryItem";
 export declare class Dory implements IDory {
@@ -145,9 +146,9 @@ export declare class Dory implements IDory {
         sharedStore: SharedStoreContext;
     };
     SetStoreKeys(stores: {
-        bagStore: IStore;
-        globalStore: IStore;
-        sharedStore: IStore;
+        bagStore: BagStoreContext;
+        globalStore: GlobalStoreContext;
+        sharedStore: SharedStoreContext;
     }): void;
     GetPreviousHistory(): HistoryItem | null;
     GetAdditionals<T>({ targetHistoryItem }: {

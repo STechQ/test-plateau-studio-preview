@@ -15,9 +15,5 @@ export interface INavigationManager extends IContextItem {
         options?: IUrlOptions;
     }): void;
     go?(...args: any[]): void;
-    go2?(qjsonPath: string, options?: {
-        newTab?: boolean;
-        store?: boolean;
-    }, cb?: () => void): void;
 }
 //# sourceMappingURL=INavigationManager.d.ts.map
