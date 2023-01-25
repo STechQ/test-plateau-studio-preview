@@ -23,6 +23,5 @@ export declare class WindowHelper {
     get Window(): IWindow;
     get Worker(): IWorker | undefined;
     static Instance: WindowHelper;
-    private wrapEventListeners;
 }
 //# sourceMappingURL=windowHelper.d.ts.map

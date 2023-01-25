@@ -20,6 +20,7 @@ import { IHistoryItem } from "./IHistoryItem";
 import { IPageCompletedCb, IPageRenderStartedCb } from "./ILifeCycleCb";
 import { ISettingsQJsonContext } from "./IRenderer";
 import { IRendererOperatorCollection } from "./Operators/IRendererOperatorCollection";
+import { IStore } from "../quick/IStore";
 export declare type PartialDisplayHookCb = (elements: Array<IDomElement>, pageId?: string, pageName?: string, navigationDirection?: INavigationDemandType, override?: boolean, doryJr?: IDoryJr | undefined, additioanls?: any | undefined) => void;
 export declare type DisplayHookCb = (elements: IDomElement[], pageId?: string, pageName?: string, navigationDirection?: INavigationDemandType, additionals?: any, noHistory?: boolean) => void;
 export interface IGoHistoryOptions {
@@ -32,6 +33,7 @@ export interface IDory extends IContextItem {
     PageCompletedHook: Hook<IPageCompletedCb>;
     PageRenderStartedHook: Hook<IPageRenderStartedCb>;
     SettingsQJsonContext: ISettingsQJsonContext;
+    platformType: PlatformType;
     Render({ qjson, compParentInst, storeItems, pageId, pageName }: {
         qjson: IQJSon;
         compParentInst?: any;
@@ -44,6 +46,11 @@ export interface IDory extends IContextItem {
     }): void;
     SetPartialDisplayCallBack({ callBackFunc }: {
         callBackFunc: PartialDisplayHookCb;
+    }): void;
+    SetStoreKeys(stores: {
+        bagStore: IStore;
+        globalStore: IStore;
+        sharedStore: IStore;
     }): void;
     getComponentCollectionByIdProperty({ id, deep }: {
         id: string;

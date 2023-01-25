@@ -4,6 +4,7 @@ import { ElementLocation } from "../../../../shrimp/interfaces/ComponentInterfac
 import { AlertType, ErrorSource, IActionButton } from "../../../../shrimp/interfaces/ComponentInterfaces/IAlert";
 import { IComponent } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponent";
 import { IComponentCollection } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponentCollection";
+import { IAlertParameters } from "../../../../shrimp/interfaces/quick/IShellGlobalMethods";
 import { IDomElement } from "../../../../shrimp/interfaces/RenderingInterfaces/IDomElement";
 import { IRenderer } from "../../../../shrimp/interfaces/RenderingInterfaces/IRenderer";
 export declare const GlobalMethodsContextName: string;
@@ -26,9 +27,7 @@ export interface IGlobalMethods extends IContextItem {
             props?: any;
             events?: any;
         };
-    }, parameters?: {
-        ownerComponent?: IComponentCollection;
-    }) => void;
+    }, parameters: IAlertParameters) => void;
     performance?: () => number;
     getDeepLinkParams: () => Record<string, string | undefined>;
     dynamicCompHandler: ({ createdComps, compLocater, referenceComp, parentCollection, appendToChild, childName }: {

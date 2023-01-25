@@ -1,1 +1,0 @@
-{"version":3,"file":"VueInitter.d.ts","sourceRoot":"","sources":["../../../../../../src/init-plateauUI/VueInitter.ts"],"names":[],"mappings":"AACG,OAAO,EAAE,WAAW,EAAE,MAAM,sEAAsE,CAAC;AACtG,OAAO,GAAG,MAAM,KAAK,CAAC;AAKtB,qBAAa,UAAU;WAEL,WAAW,CAAC,QAAQ,KAAA;WAoBpB,oBAAoB,CAAC,EAAE,UAAU,EAAE,EAAE;QAAE,UAAU,EAAE,WAAW,CAAA;KAAE,GAAG,GAAG;CAoBvF"}

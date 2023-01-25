@@ -1,5 +1,5 @@
 import { IContainerServices } from "../../../../common/shrimp/interfaces/quick/IContainerServices";
-import { IFormattingDefinition } from "../../../../common/shrimp/interfaces/quick/ISettingsYaml";
+import { IFormattingDefinition } from "../../../../common/shrimp/interfaces/quick/IFormattingDefinition";
 import { IWebSDKSettingsWrapper } from "../../../../common/shrimp/interfaces/quick/IWebSDK";
 import { IRegionalManager } from "../../../../common/qshell";
 export declare class RegionalManagerImpl implements IRegionalManager {

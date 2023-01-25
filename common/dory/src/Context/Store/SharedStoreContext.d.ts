@@ -6,7 +6,6 @@ export declare class SharedStoreContext extends BaseStoreContext implements ICon
     contextName: string;
     constructor();
     CreateSelf(): SharedStoreContext;
-    RetriveAllContextItems(): any | undefined;
     OverrideAllContextItems(newContextItems: any): void;
 }
 //# sourceMappingURL=SharedStoreContext.d.ts.map

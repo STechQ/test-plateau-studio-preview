@@ -1,15 +1,22 @@
 import { IRendererConfig } from "../../../../common/shrimp/interfaces/RenderingInterfaces/IRendererConfig";
 import { INavigationManager } from "../../../../common/qshell";
 import { IUrlOptions } from "../../../../common/shrimp/interfaces/quick/IUrl";
+import { ContextManager } from "../../../../common/shrimp/context";
 export declare class NavigationManagerImpl implements INavigationManager {
     contextName: string;
+    private websdkContext;
     go: (undefined | (({ url }: {
         url: any;
     }) => any));
-    constructor({ contextName, config }: {
+    constructor({ contextName, config, websdkContext }: {
         contextName: string;
         config?: IRendererConfig;
+        websdkContext: ContextManager;
     });
+    go2(qjsonPath: string, options?: {
+        newTab?: boolean;
+        store?: boolean;
+    }, cb?: () => void): void;
     createFunctions(config: IRendererConfig): void;
     getUrl(options: any): string;
     backOverride(): void;

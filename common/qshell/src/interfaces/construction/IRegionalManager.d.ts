@@ -1,5 +1,5 @@
 import { IContextItem } from "../../../../shrimp/context";
-import { IFormattingDefinition } from "../../../../shrimp/interfaces/quick/ISettingsYaml";
+import { IFormattingDefinition } from "../../../../shrimp/interfaces/quick/IFormattingDefinition";
 export declare const RegionalManagerContextName: string;
 export interface IRegionalManager extends IContextItem {
     getRegionList(): Array<string>;

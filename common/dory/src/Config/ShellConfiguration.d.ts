@@ -11,7 +11,7 @@ import { ICookieAccess } from "../../../shrimp/interfaces/quick/ICookieAccess";
 import { IFormatConfiguration } from "../../../shrimp/interfaces/quick/IFormatConfiguration";
 import { IPlatform } from "../../../shrimp/interfaces/quick/IPlatform";
 import { IProcessManager } from "../../../shrimp/interfaces/quick/IProcessManager";
-import { IFormattingDefinition } from "../../../shrimp/interfaces/quick/ISettingsYaml";
+import { IFormattingDefinition } from "../../../shrimp/interfaces/quick/IFormattingDefinition";
 import { IHistoryBasedShellConfiguration, IShellConfiguration } from "../../../shrimp/interfaces/quick/IShellConfiguration";
 import { IShellGlobalMethods } from "../../../shrimp/interfaces/quick/IShellGlobalMethods";
 import { IStore } from "../../../shrimp/interfaces/quick/IStore";
@@ -20,6 +20,10 @@ export declare class ShellConfiguration implements IShellConfiguration {
     network: INetwork;
     lridHelper?: (label: string, dataSource?: object | null) => string;
     go?: Function;
+    go2?(qjsonPath: string, options?: {
+        newTab?: boolean;
+        store?: boolean;
+    }): void;
     goNative?: Function;
     triggerPreviousPage?: Function;
     nemoComponents?: object;

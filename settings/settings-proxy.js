@@ -124,5 +124,5 @@ const yamlObject = {
 if (typeof exports === 'object' && typeof module === 'object'){
  	module.exports = yamlObject;
 }else{ 
-	window['plateauUISettings'] = yamlObject;
+	window['QEditorSettingsProxy'] = yamlObject;
 }
