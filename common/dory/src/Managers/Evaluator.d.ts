@@ -6,6 +6,7 @@ import { IGlobalsQS } from "../../../shrimp/interfaces/Scripting/IGlobals";
 import { ScriptLang } from "../../../shrimp/interfaces/Scripting/scriptLang";
 import { Dory } from "../Dory";
 import { HistoryItem } from "../Model/History/HistoryItem";
+import { HistoryManager } from "./../Managers/HistoryManager";
 import { MessagingManager } from "./MessagingManager";
 export declare class Evaluator implements IEvaluator {
     Evaluate2(options: {
@@ -22,14 +23,14 @@ export declare class Evaluator implements IEvaluator {
         sourceMap?: string;
     }): any;
     private prepareEvaluationItems;
-    createGlobal({ messagingManager, context, dory, ownerComponent, lastHistory }: {
+    createGlobal({ messagingManager, context, dory, ownerComponent, lastHistory, historyManager }: {
         messagingManager?: MessagingManager;
         context: ContextManager;
         dory: Dory;
         ownerComponent?: IComponentCollection;
         lastHistory?: HistoryItem | null;
+        historyManager: HistoryManager;
     }): IGlobalsQS;
-    private getLastHistory;
     generateCodeChallenge(codeVerifier: any): Promise<string>;
     generateRandomString(length: any): string;
     private fillComponentData;

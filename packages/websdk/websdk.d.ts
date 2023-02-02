@@ -1,20 +1,7 @@
 import { IRenderer } from "../../common/shrimp/interfaces/RenderingInterfaces/IRenderer";
-import { IContainerServices } from "../../common/shrimp/interfaces/quick/IContainerServices";
 import { IDomElement } from "../../common/shrimp/interfaces/RenderingInterfaces/IDomElement";
 import { LivePreviewManager } from "./src/managers/LivePreviewManager";
-declare type PlateauUIOptions = {
-    corsEnabled?: boolean;
-    filePathsForSettings?: {
-        settingsFilePath?: string;
-        componentListFilePath?: string;
-        containerServicesFilePath?: string;
-    };
-    fileContentsForSettings?: {
-        settingsFileContent?: any;
-        componentListFileContent?: any;
-        containerServicesFileContent?: IContainerServices;
-    };
-};
+import { IPlateauUIOptions } from "@stechquick/algae/lib/quick/IPlateauUI";
 declare class PlateauUI {
     private container;
     private renderer;
@@ -30,20 +17,22 @@ declare class PlateauUI {
     }): any;
 }
 declare class WebsdkContainer {
-    private webSDKInstance?;
-    private webSDKSettings?;
-    private webSDKConfiguration?;
+    private settingsWeb?;
+    private SDKInstance?;
+    private SDKSettings?;
+    private SDKConfiguration?;
     mountPoint?: IDomElement;
     private PlateauIAM;
     private PlateauUIOptions;
     lpManager?: LivePreviewManager;
     constructor();
-    init({ PlateauUIOptions }: {
-        PlateauUIOptions?: PlateauUIOptions;
+    init({ PlateauUIOptions, environmentInfo }: {
+        PlateauUIOptions?: IPlateauUIOptions;
+        environmentInfo?: string;
     }): Promise<void>;
     createRenderer({ mountPoint }: {
         mountPoint: HTMLElement;
-    }): PlateauUI;
+    }): Promise<PlateauUI>;
     open({ renderer, qjsonPath, args }: {
         renderer: IRenderer;
         qjsonPath?: string;
@@ -51,13 +40,14 @@ declare class WebsdkContainer {
     }): Promise<void>;
     private setSDKConfig;
     private setSettingsQJsons;
+    private LoadObject;
     private LoadJS;
     private LoadQjson;
     private configureLivePreview;
 }
-declare function init(PlateauUIOptions?: PlateauUIOptions): Promise<void>;
+declare function init(PlateauUIOptions?: IPlateauUIOptions, environmentInfo?: string): Promise<WebsdkContainer | undefined>;
 declare function createRenderer({ mountPoint }: {
     mountPoint: IDomElement;
-}): PlateauUI;
+}): Promise<PlateauUI>;
 export { init, createRenderer };
 //# sourceMappingURL=websdk.d.ts.map

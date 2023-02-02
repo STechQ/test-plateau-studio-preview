@@ -1,7 +1,7 @@
 export interface IStore extends IStorageAccess {
     set(name: string, value: any | undefined): void;
     get(name: string): any | undefined;
-    getAll?(): any | undefined;
+    getAll(): any | undefined;
     delete(name: string): void;
 }
 export interface IStorageAccess {

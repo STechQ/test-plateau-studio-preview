@@ -1,9 +1,10 @@
 import { IQJSon } from "../../../shrimp/interfaces/ComponentInterfaces/IQJson";
 import { PartialDisplayHookCb } from "../../../shrimp/interfaces/RenderingInterfaces/IDory";
-import { IRendererChild } from "../../../shrimp/interfaces/RenderingInterfaces/IRenderer";
+import { IDoryJr } from "../../../shrimp/interfaces/RenderingInterfaces/IDoryJr";
+import { IDoryRendererChild, IRendererChild } from "../../../shrimp/interfaces/RenderingInterfaces/IRenderer";
 import { Renderer } from "./Renderer";
 export declare class RendererChild implements IRendererChild {
-    private doryJr;
+    protected doryJr: IDoryJr;
     constructor(renderer: Renderer, compUIDPrefix?: string);
     SetCallbackDisplay(callBackFunc: PartialDisplayHookCb): void;
     Render(options: {
@@ -15,5 +16,8 @@ export declare class RendererChild implements IRendererChild {
         pageId?: string;
         pageName?: string;
     }): Promise<void>;
+}
+export declare class DoryRendererChild extends RendererChild implements IDoryRendererChild {
+    get DoryJrInst(): IDoryJr;
 }
 //# sourceMappingURL=RendererChild.d.ts.map

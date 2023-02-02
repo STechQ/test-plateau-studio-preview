@@ -13,6 +13,7 @@ export interface IRequest extends IBaseRequest {
     * True to send credentials (cookies) in a cross-origin request. False to ignore for request and ignore cookies in its response. default: false.
     */
     withCredentials?: boolean;
+    timeout?: number;
 }
 export interface IBaseRequest {
     url: string;

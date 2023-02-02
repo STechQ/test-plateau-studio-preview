@@ -10,6 +10,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     idTest: string | null;
     isDateChangedBefore: boolean;
     monthFormat: string;
+    isClickClear: boolean;
 }, {
     changeMenuValue(): void;
     onKeyUp(event: any): void;
@@ -70,6 +71,8 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     separateChar: string;
     height: string | number;
     tabindex: string | number;
+    solo: boolean;
+    soloInverted: boolean;
 }>;
 export default _default;
 //# sourceMappingURL=VInlineDatepicker.vue.d.ts.map
