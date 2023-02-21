@@ -1,18 +1,22 @@
 csspath:
   default:
-  - "static/css/main.css"
+  - "/static/css/main.css"
   myTheme:
-  - "static/css/myHappyTheme1.css"
-  - "static/css/myHappyTheme2.css"
+  - "/static/css/myHappyTheme1.css"
+  - "/static/css/myHappyTheme2.css"
   darkTheme:
-  - "static/css/myDarkTheme.css"  
+  - "/static/css/myDarkTheme.css"  
   cozy:
   - "YOUR COZY THEME CSS PATH"
-rootqjson: "static/qjsons/samplesFirstPage"
+rootqjson: "/static/qjsons/samplesFirstPage.qjson"
 rootLangCode : "tr-TR"
-alertqjson: "settings/qjson/alert.qjson"
-pipelineqjson: "settings/qjson/pipeline.qjson"
-loadingqjson: "settings/qjson/loading.qjson"
+alertqjson: "/settings/qjson/alert.qjson"
+pipelineqjson: "/settings/qjson/pipeline.qjson"
+loadingqjson: "/settings/qjson/loading.qjson"
+globalLocalizationqjson: "/settings/qjson/globalLocalization.qjson"
+loadingfile: "/settings/qjson/loadinglottie.json"
+containerServicesPath: "/static/js/containerServices.ts"
+componentListPath: "/static/js/componentList.ts"
   # Qjsons in QUI       -> /static/qjsons/first.qjson
   # Qjsons in MicroUI   -> /microui/<<microUI name>>/qjson/first.js
   # Qjsons in Symphony  -> /<<Symphony service name>>/qjsonfunc?qjsonpath=first.qjson
