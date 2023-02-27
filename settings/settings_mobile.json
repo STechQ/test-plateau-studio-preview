@@ -138,7 +138,7 @@
 	},
 	"css": {
 		"type": "js",
-		"value": "",
+		"value": "div{width:200px;}",
 		"format": "css"
 	},
 	"globalLocalization": {
