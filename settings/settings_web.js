@@ -2868,6 +2868,15 @@ var settings = {
 		"type": "path",
 		"value": "static/qjsons/samplesFirstPage",
 		"format": "qjson"
+	},
+	"localProxy": {
+		"value": {
+			"/services/processmanager": "http://localhost/processmanager",
+			"/api/users": "https://reqres.in/api/users",
+			"/api/usersError": "https://reqres.indd/api/users",
+			"/services/demorequest": "https://reqres.in/api/users?page=2"
+		},
+		"type": "object"
 	}
 }
 if (typeof exports === 'object' && typeof module === 'object'){
