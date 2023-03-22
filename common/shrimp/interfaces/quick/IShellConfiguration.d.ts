@@ -7,6 +7,7 @@ import { IComponentInstanceTracker } from "../ComponentInterfaces/IComponentInst
 import { ICreatedComponent } from "../ComponentInterfaces/ICreatedComponent";
 import { IDirectiveElement } from "../ComponentInterfaces/IDirectiveCollection";
 import { IQJSon } from "../ComponentInterfaces/IQJson";
+import { StyleValue } from "../ComponentInterfaces/IStyle";
 import { IVnode } from "../ComponentInterfaces/IVnode";
 import { IDictionary } from "../IDictionary";
 import { IHostResponseData } from "../IHostResponseData";
@@ -14,9 +15,9 @@ import { IDomElement } from "../RenderingInterfaces/IDomElement";
 import { INetwork } from "./IContainerServices";
 import { ICookieAccess } from "./ICookieAccess";
 import { IFormatConfiguration } from "./IFormatConfiguration";
+import { IFormattingDefinition } from "./IFormattingDefinition";
 import { IPlatform } from "./IPlatform";
 import { IProcessManager } from "./IProcessManager";
-import { IFormattingDefinition } from "./IFormattingDefinition";
 import { IShellGlobalMethods } from "./IShellGlobalMethods";
 import { IStorageAccess } from "./IStore";
 import { IUrlOptions } from "./IUrl";
@@ -45,7 +46,7 @@ export interface IShellConfiguration {
         clear?: () => void;
     };
     processManager?: IProcessManager;
-    dynamicCompHandler?: ({ createdComps, referenceComp, compLocater, parentCollection, append, childName }: {
+    dynamicCompHandler?: ({ createdComps, referenceComp, compLocater, parentCollection, append, childName, }: {
         createdComps: Array<IComponentCollection>;
         referenceComp?: IComponentCollection;
         compLocater: ElementLocation;
@@ -64,7 +65,7 @@ export interface IShellConfiguration {
     getUrl?(options?: {
         noQueryString?: boolean;
     }): string | undefined;
-    exportToXlsxHandler?: ({ fileName, items, headers, sheetName }: {
+    exportToXlsxHandler?: ({ fileName, items, headers, sheetName, }: {
         fileName: string;
         items: Array<object>;
         headers: Array<object>;
@@ -83,6 +84,8 @@ export interface IShellConfiguration {
     setVisibility(compCollection: IComponentCollection, compVisibility: boolean): void;
     getComponentValue(compCollection: IComponentCollection): any;
     setComponentValue(compCollection: IComponentCollection, value: string): void;
+    getComponentStyle(comp: IComponent): any;
+    setComponentStyle(compCollection: IComponentCollection, prop: string, value: string): void;
     redirect?({ url, options }: {
         url: string;
         options?: IUrlOptions;
@@ -106,6 +109,7 @@ export interface IShellConfiguration {
     getPageTitle?: () => void;
     getFavicon?: () => void;
     setPageTitle?: (value: string) => void;
+    copyToClipboard?: (value: string) => void;
     setFavicon?: (favicon: string) => void;
     getYamlLogType?: () => LogType;
     cryptoGenerateKeyPair?: () => Record<string, string>;
@@ -129,7 +133,7 @@ export interface IHistoryBasedShellConfiguration {
     createContainerView?: CreateContainerViewDelegate;
     updateContainerView?: UpdateContainerViewDelegate;
 }
-export declare type CreateComponentDelegate = ({ componentName, props, events, asChildType, asChildName, slots, scopedSlots, compClass, text, attrs, pageName, componentCollection, directives }: {
+export declare type CreateComponentDelegate = ({ componentName, props, events, asChildType, asChildName, slots, scopedSlots, compClass, text, attrs, pageName, componentCollection, directives, styles, }: {
     componentName: string;
     props: IDictionary<any>;
     events: IDictionary<Function>;
@@ -143,19 +147,20 @@ export declare type CreateComponentDelegate = ({ componentName, props, events, a
     pageName?: string;
     componentCollection: ILightComponentCollection;
     directives?: Array<IDirectiveElement>;
+    styles?: StyleValue;
 }) => ICreatedComponent;
-export declare type ComponentHasPropDelegate = (({ componentName, propName }: {
+export declare type ComponentHasPropDelegate = ({ componentName, propName, }: {
     componentName: string;
     propName: string;
-}) => boolean);
+}) => boolean;
 export declare type ComponentDomLocator = (compInst: IComponent, childIndex: number) => IDomElement | null;
-export declare type RetrieveCjsonDelegate = ({ qjsonPath }: {
+export declare type RetrieveCjsonDelegate = ({ qjsonPath, }: {
     qjsonPath: string;
 }) => Promise<IQJSon | undefined>;
 export declare type CreateContainerViewDelegate = (compUID: string) => unknown;
-export declare type UpdateContainerViewDelegate = (({ givenObject, elements, pageShift }: {
+export declare type UpdateContainerViewDelegate = ({ givenObject, elements, pageShift, }: {
     givenObject: unknown;
     elements?: Array<unknown> | string;
     pageShift: boolean;
-}) => void);
+}) => void;
 //# sourceMappingURL=IShellConfiguration.d.ts.map

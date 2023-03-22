@@ -9,9 +9,9 @@ import { IHostResponseData } from "../../../shrimp/interfaces/IHostResponseData"
 import { INetwork } from "../../../shrimp/interfaces/quick/IContainerServices";
 import { ICookieAccess } from "../../../shrimp/interfaces/quick/ICookieAccess";
 import { IFormatConfiguration } from "../../../shrimp/interfaces/quick/IFormatConfiguration";
+import { IFormattingDefinition } from "../../../shrimp/interfaces/quick/IFormattingDefinition";
 import { IPlatform } from "../../../shrimp/interfaces/quick/IPlatform";
 import { IProcessManager } from "../../../shrimp/interfaces/quick/IProcessManager";
-import { IFormattingDefinition } from "../../../shrimp/interfaces/quick/IFormattingDefinition";
 import { IHistoryBasedShellConfiguration, IShellConfiguration } from "../../../shrimp/interfaces/quick/IShellConfiguration";
 import { IShellGlobalMethods } from "../../../shrimp/interfaces/quick/IShellGlobalMethods";
 import { IStore } from "../../../shrimp/interfaces/quick/IStore";
@@ -43,7 +43,7 @@ export declare class ShellConfiguration implements IShellConfiguration {
         clear: () => void;
     };
     coreComponentOverrider?(componentName: string): IComponentClassEngine | null;
-    dynamicCompHandler?: ({ createdComps, referenceComp, compLocater, parentCollection, append, childName }: {
+    dynamicCompHandler?: ({ createdComps, referenceComp, compLocater, parentCollection, append, childName, }: {
         createdComps?: Array<IComponentCollection>;
         referenceComp?: IComponentCollection;
         compLocater: ElementLocation;
@@ -61,7 +61,7 @@ export declare class ShellConfiguration implements IShellConfiguration {
     getUrl?(options?: {
         noQueryString?: boolean;
     }): string | undefined;
-    exportToXlsxHandler?: ({ fileName, items, headers, sheetName }: {
+    exportToXlsxHandler?: ({ fileName, items, headers, sheetName, }: {
         fileName: string;
         items: Array<object>;
         headers: Array<object>;
@@ -79,6 +79,8 @@ export declare class ShellConfiguration implements IShellConfiguration {
     setVisibility: (compCollection: IComponentCollection, compVisibility: boolean) => void;
     getComponentValue: (compCollection: IComponentCollection) => any;
     setComponentValue: (compCollection: IComponentCollection, value: string) => void;
+    getComponentStyle: (comp: IComponent) => any;
+    setComponentStyle: (compCollection: IComponentCollection, prop: string, value: string) => void;
     setComponentsProperty?: (componentCollection: IComponentCollection, propertyName: string, propertyValue: any) => void;
     setRegion?: (regionName: string) => void;
     getRegionList?: () => Array<string> | undefined;
@@ -102,6 +104,7 @@ export declare class ShellConfiguration implements IShellConfiguration {
     getPageTitle?: () => void;
     getFavicon?: () => void;
     setPageTitle: (value: string) => void;
+    copyToClipboard: (value: string) => void;
     setFavicon: (icon: string) => void;
     getYamlLogType?: () => LogType;
     cryptoGenerateKeyPair?: () => Record<string, string>;

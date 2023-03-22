@@ -1,10 +1,11 @@
 import { ContextManager } from "../../../../shrimp/context";
 import { CTyped, ICompJson } from "../../../../shrimp/interfaces/ComponentInterfaces/ICompJson";
 import { IComponent } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponent";
-import { CreatedFieldsHook, IComponentCollection, ScopedSlotCreatorFunc } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponentCollection";
+import { CreatedFieldsHook, IComponentCollection, qjsonCollectionInfo, ScopedSlotCreatorFunc } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponentCollection";
 import { ICreatedComponent } from "../../../../shrimp/interfaces/ComponentInterfaces/ICreatedComponent";
 import { IDirectiveCollection } from "../../../../shrimp/interfaces/ComponentInterfaces/IDirectiveCollection";
 import { IEventCollection } from "../../../../shrimp/interfaces/ComponentInterfaces/IEventCollection";
+import { StyleValue } from "../../../../shrimp/interfaces/ComponentInterfaces/IStyle";
 import { IVnode } from "../../../../shrimp/interfaces/ComponentInterfaces/IVnode";
 import { IDictionary } from "../../../../shrimp/interfaces/IDictionary";
 import { IDictionaryNullable } from "../../../../shrimp/interfaces/IDictionaryNullable";
@@ -46,7 +47,9 @@ export declare class ComponentCollection implements IComponentCollection {
     dynamicCompIdSuffix?: string;
     private rootHistoryItem;
     directiveFields: IDirectiveCollection;
-    constructor({ compJson, context, asChildType, asChildName, asChildIndex, parentCompCollection, compareComponent, dynamicCompIdSuffix }: {
+    compStyleValues?: StyleValue;
+    qjsonInfo: qjsonCollectionInfo;
+    constructor({ compJson, context, asChildType, asChildName, asChildIndex, parentCompCollection, compareComponent, dynamicCompIdSuffix, qjsonVersion }: {
         compJson?: ICompJson;
         context: ContextManager;
         asChildType?: CTyped;
@@ -55,6 +58,7 @@ export declare class ComponentCollection implements IComponentCollection {
         parentCompCollection?: IComponentCollection;
         compareComponent?: boolean;
         dynamicCompIdSuffix?: string;
+        qjsonVersion?: number;
     });
     get RootHistoryItem(): HistoryItem;
     SetChildrenFields({ children, childrenCreators }: {
@@ -76,5 +80,12 @@ export declare class ComponentCollection implements IComponentCollection {
     GetDoryJr(): IDoryJr | undefined;
     SetDoryJr(doryJr: IDoryJr): void;
     GetCompUID(): string;
+    SetComponentStyles(compStyles?: StyleValue): void;
+    /**
+     * Create style field on the component instance and proxify the newly created field
+     * @param compCollection Component collection
+     * @returns void
+     */
+    proxifyStyleField(compCollection: IComponentCollection): void;
 }
 //# sourceMappingURL=ComponentCollection.d.ts.map

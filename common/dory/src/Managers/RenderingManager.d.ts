@@ -28,7 +28,8 @@ export declare class RenderingManager implements IContextItem {
     private compareCompValue;
     private dynamicCompIDSuffix?;
     private pageScrtipting?;
-    constructor({ pjson, context, dataItem, asChildType, asChildName, controlDict, qLang, parentCompCollection, compareCompValue, dynamicCompIDSuffix, pageScripting }: {
+    private qjsonVersion?;
+    constructor({ pjson, context, dataItem, asChildType, asChildName, controlDict, qLang, parentCompCollection, compareCompValue, dynamicCompIDSuffix, pageScripting, qjsonVersion }: {
         pjson: Array<ICompJson | null>;
         context: ContextManager;
         dataItem?: object | null;
@@ -40,6 +41,7 @@ export declare class RenderingManager implements IContextItem {
         compareCompValue: boolean;
         dynamicCompIDSuffix?: string;
         pageScripting?: PageScripting;
+        qjsonVersion?: number;
     });
     private getLang;
     private WillRender;
@@ -53,6 +55,8 @@ export declare class RenderingManager implements IContextItem {
      * @param directives Directive collection of the component. Get all the directives from this collection
      */
     private GenerateDirectives;
+    private CalculateStyle;
+    private getItemValue;
     private GenerateChildren;
     private isEditMode;
     private getComponentParentInstance;
