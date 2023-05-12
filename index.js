@@ -61,8 +61,9 @@ var quiRoot = document.createElement("div");
 quiRootParent.appendChild(quiRoot);
 var PlateauUIOptions = {
     corsEnabled: true,
-    iam: "./settings/settings_iam.js",
-    settings: "./settings/settings_web.js"
+    iam: window.quiProms.iam.p,
+    settings: window.quiProms.web.p,
+    asset: window.quiProms.asset.p
 };
 window.websdk.init(PlateauUIOptions, "qui").then(function () { return __awaiter(void 0, void 0, void 0, function () {
     var renderer;

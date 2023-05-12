@@ -4,6 +4,7 @@ import { AlertType, ErrorSource, IActionButton } from "../ComponentInterfaces/IA
 import { IComponent } from "../ComponentInterfaces/IComponent";
 import { LogType } from "../ComponentInterfaces/ILogger";
 import { IHostResponseData } from "../IHostResponseData";
+import { ILocationPosition } from "../quick/ILocationPosition";
 import { IDownloadRequest, IRequest } from "../NetworkInterfaces/IRequest";
 import { ICookieValue } from "../quick/ICookieAccess";
 import { IEditorInstance } from "../quick/IEditorInstance";
@@ -63,7 +64,7 @@ export interface IGlobals_Quick {
         newTab?: boolean;
         store?: boolean;
     }) => any;
-    goNative?: ({ code, param, }: {
+    goNative?: ({ code, param }: {
         code: string;
         param?: Record<string, any>;
     }) => void;
@@ -127,6 +128,7 @@ export interface IGlobals_Quick {
     toDate: (dateString: string, formatType?: string) => Date;
     dateFromNow: (dateString: string, formatType?: string) => string;
     platform: IGlobals_platform;
+    getCurrentPosition: () => Promise<ILocationPosition> | undefined;
     toMoney: (number: Number | string, formatType?: string, opt?: Intl.NumberFormatOptions, bigDecimal?: boolean) => string;
     setComponentClass: (componentInstance: IComponent, classes: Array<string>) => void;
     toDecimal: (value: string, radixPoint?: string) => number;
@@ -164,6 +166,14 @@ export interface IGlobals_Quick {
         variable: unknown;
     };
     yamlLogType: any;
+    loading: {
+        show: () => void;
+        hide: () => void;
+    };
+    render: {
+        block(): void;
+        resume(): void;
+    };
 }
 export interface IGlobals_store {
     set: (name: string, value: any) => void;

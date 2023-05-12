@@ -6,10 +6,13 @@ export declare class Decimal implements ICompositor {
     private _maskedValue;
     private _unmaskedValue;
     private _skipInputEvent;
+    private _isMinValueSet;
     constructor(context: Context);
     compose(): void;
+    private setMinValueOnBlur;
     private changeValue;
     private formatValue;
+    private compareNumbers;
     getUnmaskedValue(): string;
     private unMask;
     private validate;
